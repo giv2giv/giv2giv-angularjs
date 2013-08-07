@@ -1,4 +1,3 @@
-
 Angularjs coding for logging into giv2giv.
 
 I used the standard generator to create a file structure for this project: yo angular
@@ -15,3 +14,5 @@ Besides building out the submit, also need to build tests.
 
 Built submit code, but had CORS issue:
 XMLHttpRequest cannot load http://www.giv2giv.org/api/sessions/create.json. Request header field Content-Type is not allowed by Access-Control-Allow-Headers.
+
+
