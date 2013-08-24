@@ -1,3 +1,27 @@
+Adding yeoman suppoer.
+
+h2. Getting stared with yeoman
+
+*Commands*
+
+  angular:app
+  angular:common
+  angular:constant
+  angular:controller
+  angular:decorator
+  angular:directive
+  angular:factory
+  angular:filter
+  angular:main
+  angular:provider
+  angular:route
+  angular:service
+  angular:value
+  angular:view
+
+
+
+
 Angularjs coding for logging into giv2giv.
 
 I used the standard generator to create a file structure for this project: yo angular
