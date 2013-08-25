@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: AccountCtrl', function () {
+describe('Controller: RegisterCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('giv2givApp'));
+  beforeEach(module('giv2givAppApp'));
 
-  var AccountCtrl,
+  var RegisterCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AccountCtrl = $controller('AccountCtrl', {
+    RegisterCtrl = $controller('RegisterCtrl', {
       $scope: scope
     });
   }));

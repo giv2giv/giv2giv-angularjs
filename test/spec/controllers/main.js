@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('giv2givAppApp'));
+  beforeEach(module('giv2givApp'));
 
   var MainCtrl,
     scope;

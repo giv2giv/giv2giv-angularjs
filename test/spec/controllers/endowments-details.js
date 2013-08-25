@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Controller: EndowmentsDetailsCtrl', function () {
+describe('Controller: EndowmentDetailsCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('giv2givAppApp'));
+  beforeEach(module('giv2givApp'));
 
   var EndowmentsDetailsCtrl,
     scope;
@@ -11,7 +11,7 @@ describe('Controller: EndowmentsDetailsCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    EndowmentsDetailsCtrl = $controller('EndowmentsDetailsCtrl', {
+    EndowmentsDetailsCtrl = $controller('EndowmentDetailsCtrl', {
       $scope: scope
     });
   }));
