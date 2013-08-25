@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: DonateCtrl', function () {
 
   // load the controller's module
   beforeEach(module('giv2givApp'));
 
-  var MainCtrl,
+  var DonateCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    DonateCtrl = $controller('DonateCtrl', {
       $scope: scope
     });
   }));
