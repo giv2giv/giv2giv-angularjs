@@ -1,23 +1,30 @@
-Adding yeoman suppoer.
+h2. Adding yeoman support
 
-h2. Getting stared with yeoman
+Make sure you have node and npm installed. Make sure they are not installed as root otherwise you will have problems. 
 
-*Commands*
+http://nodejs.org/
+https://npmjs.org/
 
-  angular:app
-  angular:common
-  angular:constant
-  angular:controller
-  angular:decorator
-  angular:directive
-  angular:factory
-  angular:filter
-  angular:main
-  angular:provider
-  angular:route
-  angular:service
-  angular:value
-  angular:view
+h3. Getting stared with yeoman
+
+http://yeoman.io/gettingstarted.html
+
+*Angular Commands*
+
+yo angular:app
+yo angular:common
+yo angular:constant
+yo angular:controller
+yo angular:decorator
+yo angular:directive
+yo angular:factory
+yo angular:filter
+yo angular:main
+yo angular:provider
+yo angular:route
+yo angular:service
+yo angular:value
+yo angular:view
 
 
 
