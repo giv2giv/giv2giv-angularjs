@@ -5,6 +5,5 @@ angular.module('giv2givApp')
 		$scope.message='';
 	$scope.submitLogin = function(){
 		$location.path('endowments');
-
 	};
 });

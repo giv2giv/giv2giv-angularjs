@@ -7,10 +7,10 @@ angular.module('giv2givApp', [])
     delete $httpProvider.defaults.headers.post['Content-type'];
     
     $routeProvider
-      // .when('/', {
-      //   templateUrl: 'views/main.html',
-      //   controller: 'MainCtrl'
-      // })
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
@@ -18,6 +18,10 @@ angular.module('giv2givApp', [])
       .when('/endowments', {
         templateUrl: 'views/endowments.html',
         controller: 'EndowmentCtrl'
+      })
+      .when('/endowment/create', {
+        templateUrl: 'views/create.html',
+        controller: 'CreateCtrl'
       })
       .when('/endowments/:id', {
         templateUrl: 'views/endowment-details.html',
@@ -38,6 +42,10 @@ angular.module('giv2givApp', [])
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
+      })
+      .when('/thankyou', {
+        templateUrl: 'views/thankyou.html',
+        controller: 'ThankyouCtrl'
       })
       .otherwise({
         redirectTo: '/login'
