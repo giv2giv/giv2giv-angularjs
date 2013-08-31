@@ -1,16 +1,21 @@
-<h1>Create Endowment</h1>
-<form>
-	<label>Name</label><input type="text">
-	<label>Description</label>
-	<textarea>
+<div class="panel">
+	<h2>Create Endowment</h2>
+	<form>
+		<label>Name: </label><input type="text">
+		<label>Description:</label>
+		
+		<textarea>
 
-	</textarea>
-	<label>Charities</label>
-	<ul>
-		<li><a href="#/charities/1234">Some Charity Name</a><button ng-click="removeCharity()">Remove</button></li>
-	</ul>
-	<input type="text"><button ng-click="addCharity()">Add</button>
-	<br>
-
-	<button ng-click="saveEndowment()">Create Endowment</button>
-</form>
+		</textarea>
+		
+		<label>Charities</label>
+		
+		<ul>
+			<li><a href="#/charities/1234">Some Charity Name</a><button ng-click="removeCharity()">Remove</button></li>
+		</ul>
+		<input type="text"><button ng-click="addCharity()">Add</button>
+		
+		<br>
+		<button ng-click="saveEndowment()">Create Endowment</button>
+	</form>
+</div>
