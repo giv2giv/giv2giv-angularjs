@@ -73,6 +73,7 @@ body {
     color: grey;
 }
 .endowment__action{
+    
     padding: 20px;
     text-align: center;
 }
@@ -80,7 +81,7 @@ body {
     margin: 0px;
 }
 .endowment__stats li{
-    width: 100px;
+    width: 120px;
     margin: 0px;
     display: inline-block;
     padding-top: 20px;
@@ -101,14 +102,11 @@ body {
     font-size: 1.5em;
 }
 .endowment__charities-list{
-    background-color: grey;
 }
 .endowment__charities-list li{
     list-style-type: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding: 0px;
+    margin-bottom: 10px;
 }
 .endowment__charities-list ul{
     margin: 0px;
