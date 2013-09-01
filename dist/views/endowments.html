@@ -1,2 +1,103 @@
-<p>This is the endowment view.</p>
-<a href="#/endowments/12345">Endowment 12345</a>
+<div class="row">
+	<div class="span8">
+		<div class="panel">
+			<input class="span6" type="text" ng-model="result" typeahead="suggestion for suggestion in cities($viewValue)">
+			<input type="submit" value="Search">
+		</div>
+		 <div class="panel">
+			<div class="endowment__charities-list">
+				<ul>
+					<li>
+						<div class="row">
+							<div class="span2">
+								<div class="list__thumb">
+									<img src="http://placehold.it/150x150">
+								</div>
+								<div>
+									<button>Donate</button>
+								</div>
+							</div>
+							<div class="span5">
+								<h4><a href="#/endowments/12345">Giv2Giv Endowment for The Arts</a></h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et magna non augue rutrum fringilla ut sed felis.
+									<a href="#/endowments/1234">Read More</a>
+								</p>
+								<p class="recap-message">With the help of <strong>500</strong> donors this endowment has grown to <strong>$50,000</strong> and have given back <strong>$500</strong> to charities.</p>
+								<div class="tags">
+									<span class="tag">Arts</span> <span class="tag">Education</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="span2">
+								<div class="list__thumb">
+									<img src="http://placehold.it/150x150">
+								</div>
+								<div>
+									<button>Donate</button>
+								</div>
+							</div>
+							<div class="span5">
+								<h4><a href="#/endowments/12345">Giv2Giv Endowment for The Arts</a></h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et magna non augue rutrum fringilla ut sed felis.
+									<a href="#/endowments/1234">Read More</a>
+								</p>
+								<p class="recap-message">With the help of <strong>500</strong> donors this endowment has grown to <strong>$50,000</strong> and have given back <strong>$500</strong> to charities.</p>
+								<div class="tags">
+									<span class="tag">Arts</span> <span class="tag">Education</span>
+								</div>
+							</div>
+							
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="span2">
+								<div class="list__thumb">
+									<img src="http://placehold.it/150x150">
+								</div>
+								<div>
+									<button>Donate</button>
+								</div>
+							</div>
+							<div class="span5">
+								<h4><a href="#/endowments/12345">Giv2Giv Endowment for The Arts</a></h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et magna non augue rutrum fringilla ut sed felis.
+									<a href="#/endowments/1234">Read More</a>
+								</p>
+								<p class="recap-message">With the help of <strong>500</strong> donors this endowment has grown to <strong>$50,000</strong> and have given back <strong>$500</strong> to charities.</p>
+								<div class="tags">
+									<span class="tag">Arts</span> <span class="tag">Education</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="show-more">
+					<a href="#">Show More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="span4">
+		<div class="panel">
+			<p class="tags">
+				 <h3>Charities</h3>
+				 <span class="tag" ng-repeat="charity in charities">{{charity}}</span>
+		
+			</p>
+			<div class="clear"></div>
+			<p class="tags">
+				 <h3>Tags</h3>
+				 <span class="tag" ng-repeat="tag in tags">{{tag}}</span>
+		
+			</p>
+			<div class="clear"></div>
+		</div>
+		<div class="panel">
+			<a class="btn" href="#/endowment/create">Create New Endowment</a>
+		</div>
+	</div>
+</div>

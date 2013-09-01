@@ -28,6 +28,11 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     yeoman: yeomanConfig,
+    shell: {
+      pushGhPages: {
+        command: 'git subtree push --prefix dist origin gh-pages'
+      }
+    },
     watch: {
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
@@ -160,9 +165,9 @@ module.exports = function (grunt) {
     },
     // not used since Uglify task does concat,
     // but still available if needed
-    /*concat: {
+    concat: {
       dist: {}
-    },*/
+    },
     rev: {
       dist: {
         files: {
@@ -212,14 +217,14 @@ module.exports = function (grunt) {
       // By default, your `index.html` <!-- Usemin Block --> will take care of
       // minification. This option is pre-configured if you do not wish to use
       // Usemin blocks.
-      // dist: {
-      //   files: {
-      //     '<%= yeoman.dist %>/styles/main.css': [
-      //       '.tmp/styles/{,*/}*.css',
-      //       '<%= yeoman.app %>/styles/{,*/}*.css'
-      //     ]
-      //   }
-      // }
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/styles/main.css': [
+            '.tmp/styles/{,*/}*.css',
+            '<%= yeoman.app %>/styles/{,*/}*.css'
+          ]
+        }
+      }
     },
     htmlmin: {
       dist: {
@@ -360,5 +365,8 @@ module.exports = function (grunt) {
     'jshint',
     'test',
     'build'
+  ]);
+  grunt.registerTask('gh-pages', [
+    'shell'
   ]);
 };

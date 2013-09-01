@@ -1,1 +1,28 @@
-<p>This is the donate view.</p>
+<div class="panel">
+	<h1>Donate</h1>
+	<form>
+		<fieldset>
+			<legend>Dwolla</legend>
+			<a href="https://www.dwolla.com/register" target="_blank">Don't have a Dwolla Pin?</a>
+			<br>
+			<span>Pin</span> <input type="text" class="span1">
+			<br>
+			<a href="">I forgot my pin</a>
+			<br>
+			<input type="radio" name="amount" value="1">$1
+			<input type="radio" name="amount" value="5">$5
+			<input type="radio" name="amount" value="10">$10
+			<input type="radio" name="amount" value="10">$50
+			<input type="radio" name="amount" value="10">$100
+			<br>
+			<input type="radio" name="amount" value="10"><input type="text" class="span1" value="custom">
+			<br>
+			<input type="radio" name="frequency"> <span>One time donation</span>
+			<br>
+			<input type="radio" name="frequency"> <span>Monthly recurring</span>
+			<br>
+			<button ng-click="donate()">Submit</button>
+		</fieldset>
+		
+	</form>
+</div>

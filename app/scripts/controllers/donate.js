@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('giv2givApp')
-  .controller('DonateCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('DonateCtrl', function ($scope, $location) {
+    $scope.donate = function(){
+    	$location.path('thankyou');
+    };
   });

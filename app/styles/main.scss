@@ -14,6 +14,10 @@ body {
     color: #333;
 }
 
+.main-content{
+    margin-top: 70px;
+}
+
 .hero-unit {
     margin: 50px auto 0 auto;
     width: 300px;
@@ -29,4 +33,128 @@ body {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+}
+
+.panel{
+    background-color: white;
+    padding: 40px;
+    margin-bottom: 5px;
+}
+
+.panel label{
+
+}
+.panel input{
+    margin-bottom: 20px;
+}
+.panel h2{
+    
+}
+
+.endowment{
+    background: black;
+    color: white;
+}
+.endowment__description{
+    padding: 20px;
+}
+.endowment__image{
+    text-align: center;
+    height: 150px;
+    padding: 20px;
+    background-size: 100%;
+}
+.endowment__title{
+    margin-top: 75px;
+    text-shadow: 0.1em 0.1em 0.05em #333;
+}
+.endowment__stats{
+    background-color: #D8D8D8;
+    color: grey;
+}
+.endowment__action{
+    
+    padding: 20px;
+    text-align: center;
+}
+.endowment__stats ul{
+    margin: 0px;
+}
+.endowment__stats li{
+    width: 120px;
+    margin: 0px;
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    
+}
+.endowment__action .btn{
+    width: 50%;
+    padding: 15px;
+    background-image: none;
+    background-color: grey;
+    border: 0px;
+    border-radius: 0px;
+    text-shadow: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.endowment__charities-list{
+}
+.endowment__charities-list li{
+    list-style-type: none;
+    padding: 0px;
+    margin-bottom: 40px;
+}
+.endowment__charities-list ul{
+    margin: 0px;
+}
+.endowment__charities{
+    padding-left: 20px;
+    padding-right: 20px;
+    background: grey;
+    color: black;
+}
+.endowment__amount{
+    color: black;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.header-logo{
+    width: 100px;
+    margin-bottom: 10px; 
+}
+
+.header-auth{
+    margin-top: 20px; 
+}
+
+.tag{
+    font-size: 0.7em;
+    margin-right:5px;
+    display: block-inline;
+    background-color: grey;
+    color: white;
+    padding: 7px;
+    margin-top: 5px;
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+.recap-message{
+    font-size: 0.8em;
+}
+
+.show-more{
+    text-align: center;
+}
+
+.list__thumb{
+    margin-bottom: 10px;
 }
