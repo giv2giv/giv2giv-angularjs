@@ -38,7 +38,7 @@ body {
 .panel{
     background-color: white;
     padding: 40px;
-    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .panel label{
@@ -106,7 +106,7 @@ body {
 .endowment__charities-list li{
     list-style-type: none;
     padding: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 .endowment__charities-list ul{
     margin: 0px;
@@ -132,3 +132,29 @@ body {
     margin-top: 20px; 
 }
 
+.tag{
+    font-size: 0.7em;
+    margin-right:5px;
+    display: block-inline;
+    background-color: grey;
+    color: white;
+    padding: 7px;
+    margin-top: 5px;
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+.recap-message{
+    font-size: 0.8em;
+}
+
+.show-more{
+    text-align: center;
+}
+
+.list__thumb{
+    margin-bottom: 10px;
+}
