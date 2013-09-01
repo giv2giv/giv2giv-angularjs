@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('giv2givApp')
-  .controller('CreateCtrl', function ( $scope, $location  ) {
+  .controller('CreateCtrl', function ( $scope, $location, $http, limitToFilter) {
   	$scope.endowment = {};
     $scope.endowment.name = "";
     $scope.endowment.description = "";
@@ -28,5 +28,18 @@ angular.module('giv2givApp')
     $scope.saveEndowment = function (){
     	$location.path('endowments/12345');
     };
+
+    $scope.result = undefined;
+
+    $scope.charities = function(query) {
+      var charityArray = [];
+      angular.forEach(charities, function(value, key){
+        this.push(value.name);
+      }, charityArray);
+
+      return charityArray;
+    };
+
+ 
 
   });
