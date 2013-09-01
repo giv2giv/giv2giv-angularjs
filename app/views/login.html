@@ -1,7 +1,13 @@
-<form>
-	<label>Email</label><input type="text"/>
-	<label>Pasword</label><input type="text"/>
+<div class="panel">
+	<h2>Welcome back</h2>
+	<form>
+		<label>Email</label><input type="text"/>
+		<br>
+		<label>Pasword</label><input type="text"/>
+		<br>
+		<button ng-click="submitLogin()">Login</button>
+	</form>	
+	<a href="#/register">Don't have an account? Register here!</a>
 	<br>
-	<button ng-click="submitLogin()">Login</button>
-</form>	
-<a href="#/register">Don't have an account? Register here!</a>
+	<a href="#/register">Opps, I forgot my password.</a>
+</div>

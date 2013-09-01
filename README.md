@@ -1,3 +1,5 @@
+git subtree push --prefix dist origin gh-pages
+
 h2. Adding yeoman support
 
 Make sure you have node and npm installed. Make sure they are not installed as root otherwise you will have problems. 
