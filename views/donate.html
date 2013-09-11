@@ -1,28 +1,28 @@
 <div class="panel">
 	<h1>Donate</h1>
-	<form>
-		<fieldset>
-			<legend>Dwolla</legend>
-			<a href="https://www.dwolla.com/register" target="_blank">Don't have a Dwolla Pin?</a>
-			<br>
-			<span>Pin</span> <input type="text" class="span1">
-			<br>
-			<a href="">I forgot my pin</a>
-			<br>
-			<input type="radio" name="amount" value="1">$1
-			<input type="radio" name="amount" value="5">$5
-			<input type="radio" name="amount" value="10">$10
-			<input type="radio" name="amount" value="10">$50
-			<input type="radio" name="amount" value="10">$100
-			<br>
-			<input type="radio" name="amount" value="10"><input type="text" class="span1" value="custom">
-			<br>
-			<input type="radio" name="frequency"> <span>One time donation</span>
-			<br>
-			<input type="radio" name="frequency"> <span>Monthly recurring</span>
-			<br>
-			<button ng-click="donate()">Submit</button>
-		</fieldset>
-		
+
+	<script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="pk_test_KNxIs6hDZRgl1JN1eEAeZ9nT" data-amount="2000" data-name="Demo Site" data-description="2 widgets ($20.00)" data-currency="usd" data-image="/128x128.png">
+</script>
+<!-- 	<form action="https://www.dwolla.com/oauth/v2/authenticate/" method="GET">
+		<input id="client_id" name="client_id" type="hidden" value="{{key}}" />
+		<input id="response_type" name="response_type" type="hidden" value="code" />
+		<input id="redirect_uri" name="redirect_uri" type="hidden" 
+		value="http://dev.click2mail.com:9000/#/donate/1234" />
+		<input id="scope" name="scope" type="hidden" 
+		value="send|transactions" />
+		<button type="submit">Submit</button>
 	</form>
+
+	<form action="https://www.dwolla.com/oauth/v2/token/" method="GET">
+
+		<input id="client_id" name="client_id" type="hidden" value="{{key}}" />
+		<input id="client_secret" name="client_secret" type="hidden" value="{{secret}}" />
+		<input id="redirect_uri" name="redirect_uri" type="hidden" 
+		value="http://dev.click2mail.com:9000/#/donate/1234" />
+		<input id="grant_type" name="grant_type" type="hidden" 
+		value="authorization_code" />
+		<input id="code" name="code" type="hidden" 
+		value="{{code}}" />
+		<button type="submit">Submit</button>
+	</form> -->
 </div>
