@@ -7,21 +7,25 @@ angular.module('giv2givApp')
     $scope.endowment.description = "";
     $scope.endowment.charities = [];
 
-    var charities = [
+    $scope.charityList = [
       {name: "Charity One", id: 1234},
       {name: "Charity Two", id: 1235},
       {name: "Charity Three", id: 1236}
     ];
 
-    $scope.endowment.charities = charities;
 
     $scope.removeCharity = function ( charityId ){ 
       $scope.endowment.charities.splice ( charityId, 1 );
+      var charityCount = $scope.endowment.charities.length;
+      $scope.endowment.charityDistribution = 100 / charityCount;
     };
 
     $scope.addCharity = function ( charity ) {
       if ( charity != undefined ) {
         $scope.endowment.charities.push ( charity );
+        var charityCount = $scope.endowment.charities.length;
+        $scope.endowment.charityDistribution = 100 / charityCount;
+
       };
     };
 
@@ -33,7 +37,7 @@ angular.module('giv2givApp')
 
     $scope.charities = function(query) {
       var charityArray = [];
-      angular.forEach(charities, function(value, key){
+      angular.forEach($scope.charityList, function(value, key){
         this.push(value.name);
       }, charityArray);
 
