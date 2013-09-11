@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('giv2givApp', ['ui.bootstrap'])
+angular.module('giv2givApp', ['ui.bootstrap', 'stripe'])
   .config(function ($routeProvider, $httpProvider) {
 
     delete $httpProvider.defaults.headers.common['X-Requested-With'];

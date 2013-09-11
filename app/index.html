@@ -37,7 +37,10 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+       Stripe.setPublishableKey('pk_test_KNxIs6hDZRgl1JN1eEAeZ9nT');
+    </script>
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
@@ -50,9 +53,10 @@
     <script src="scripts/controllers/register.js"></script>
     <script src="scripts/controllers/create.js"></script>
     <script src="scripts/controllers/thankyou.js"></script>
-   
+    <script src="scripts/directives/stripe-angular.js"></script>
     <!-- endbuild -->
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.5.0.js"></script>
+    
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
