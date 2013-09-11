@@ -1,7 +1,7 @@
 <div class="panel">
 	<h1>Donate</h1>
 
-	<script
+<!--	<script
   src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
   data-key="pk_test_KNxIs6hDZRgl1JN1eEAeZ9nT"
   data-amount="2000"
@@ -9,7 +9,19 @@
   data-description="2 widgets ($20.00)"
   data-currency="usd"
   data-image="/128x128.png">
-</script>
+</script> -->
+<form stripe:form="saveCustomer">
+  <fieldset>
+  	<input type="hidden" data-amount="2000"/>
+    <label>Credit Card</label><input type="text" size="20" data-stripe="number"/>
+    <br>
+    <label>CVC</label><input type="text" size="4" data-stripe="cvc"/>
+    <br>
+    <label>Month</label><input type="text" size="2" data-stripe="exp-month"/>
+    <label>Year</label><input type="text" size="4" data-stripe="exp-year"/>
+  </fieldset>
+  <button type="submit" class="btnGreen">Save</button>
+</form>
 <!-- 	<form action="https://www.dwolla.com/oauth/v2/authenticate/" method="GET">
 		<input id="client_id" name="client_id" type="hidden" value="{{key}}" />
 		<input id="response_type" name="response_type" type="hidden" value="code" />
