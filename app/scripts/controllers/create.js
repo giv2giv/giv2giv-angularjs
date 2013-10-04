@@ -1,64 +1,28 @@
 'use strict';
 
 angular.module('giv2givApp')
-  .controller('CreateCtrl', function ( $scope, $location, $http, $routeParams, charity) {
+  .controller('CreateCtrl', function ( $scope, $location, $http, $routeParams, endowment) {
   	$scope.endowment = {};
     $scope.endowment.name = "";
     $scope.endowment.description = "";
-    $scope.endowment.charities = [];
     $scope.steps = {};
+    $scope.privacyOptions = ["public", "private"];
+    $scope.donationAmounts = ["5.00", "10.00", "20.00", "100.00"];
+    $scope.endowment.charity_group_visibility = $scope.privacyOptions[0];
+    $scope.endowment.minimum_donation_amount = $scope.donationAmounts[0];
 
-    if($routeParams.id){
-      $scope.steps.showStep1 = false;
-      $scope.steps.showStep2 = true;
-    }else{
-      $scope.steps.showStep1 = true;
-    }
 
     $scope.createEndowment = function(){
-      $scope.steps.showStep1 = false;
-      $scope.steps.showStep2 = true;
 
-      charity.query(function(data){
-        $scope.charityList = data;
-        console.log(data);
-        $location.path("endowment/create/1234");
+      var Endowment = new endowment($scope.endowment);
+
+      var result = Endowment.$save(
+      function success(data){
+        $location.path("endowment/create/" + data.charity_group.id);
+      },
+      function err(){
+        console.log("Opps")
       });
     }
-
-
-    $scope.removeCharity = function ( charityId ){ 
-      $scope.endowment.charities.splice ( charityId, 1 );
-      var charityCount = $scope.endowment.charities.length;
-      $scope.endowment.charityDistribution = 100 / charityCount;
-    };
-
-    $scope.addCharity = function ( charity ) {
-      if ( charity != undefined ) {
-        $scope.endowment.charities.push(charity);
-        var charityCount = $scope.endowment.charities.length;
-        $scope.endowment.charityDistribution = 100 / charityCount;
-
-      };
-    };
-
-    $scope.saveEndowment = function (){
-    	$location.path('endowments/12345');
-    };
-
-    $scope.result = undefined;
-
-    $scope.charities = function(query) {
-      var charityArray = [];
-      angular.forEach($scope.charityList, function(value, key){
-        this.push(value.name);
-      }, charityArray);
-
-      return charityArray;
-    };
-
-    $scope.debug = $scope.endowment;
-
- 
 
   });
