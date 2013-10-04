@@ -1,51 +1,68 @@
 <div class="row">
 	<div class="span8">
-		<div class="panel">
+		<!-- Create Panel -->
+		<div class="panel" ng-show="steps.showStep1">
 			<h2>Create Endowment</h2>
 			<form>
 				<label>Name </label>
-				<input class="span6" type="text"/>
+				<input ng-model="endowment.name" class="span6" type="text"/>
 				<label>Description</label>
 				
-				<textarea class="span6" rows="10"></textarea>
-				
-				<label>Charities</label>
-				<div class="endowment__charities-list">
-					<ul ng-repeat="charity in endowment.charities">
-						<li>
-							<a class="span4" href="#/charities/{{charity.id}}">{{charity.name}}</a>
-							<!-- <input class="span1" type="text" ng-model="charity.share"/>% -->
-							<span>{{endowment.charityDistribution | number:0 }}%</span>
-							<button ng-click="removeCharity($index)">X</button>
-						</li>
-					</ul>
-				</div>
-			    <input class="span6" type="text" ng-model="result" typeahead="suggestion for suggestion in charities($viewValue)">
-				
+				<textarea ng-model="endowment.description" class="span6" rows="10"></textarea>
 
-				
-					<div class="endowment__charities-list">
-						<ul ng-repeat="charity in charityList">
-							<li>
-								<div class="row">
-									<div class="span5">
-										<a href="#/charities/1234">{{charity.name}}</a>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et magna non augue rutrum fringilla ut sed felis. 
-											<a href="#/charities/1234">Read More</a>
-										</p>
-										<p class="recap-message">With the help of <strong>500</strong> donors this charity has received <strong>$50</strong> in donations from this endowment.</p>
-									</div>
-									<div class="span1">
-										<button ng-click="addCharity(charity)">Add</button>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				<br>
-
-				<button ng-click="saveEndowment()">Create Endowment</button>
+				<label>Privacy</label>
+				<select ng-model="endowment.privacy" ng-options="c.name for c in endowment.privacy"></select>
+				<select ng-model="endowment.privacy">
+					<option value="public" selected>public</option>
+					<option value="private">private</option>
+				</select>
+				<label>Minimum Donation</label>
+				<select ng-model="endowment.minDonation">
+					<option value="public" selected>$5.00</option>
+					<option value="private">$10.00</option>
+				</select>
+				<input ng-hide="true" ng-model="endowment.donation" type="text"/>
+				<br/>
+				<button ng-click="createEndowment()">Select Charities</button>
 			</form>
+		</div>
+		<!-- Add Charity Panel -->
+		<div class="panel" ng-show="steps.showStep2">
+			<label>Charities</label>
+			<div class="endowment__charities-list">
+			   <ul ng-repeat="charity in endowment.charities">
+			      <li>
+			         <a class="span4" href="#/charities/{{charity.id}}">{{charity.name}}</a>
+			         <input class="span1" type="text" ng-model="charity.share"/>% 
+			         <span>{{endowment.charityDistribution | number:0 }}%</span>
+			         <button ng-click="removeCharity($index)">X</button>
+			      </li>
+			   </ul>
+			</div>
+			<input class="span6" type="text" ng-model="result" typeahead="suggestion for suggestion in charities($viewValue)">
+			<div class="endowment__charities-list">
+			   <ul ng-repeat="charity in charityList">
+			      <li>
+			         <div class="row">
+			            <div class="span5">
+			               <a href="#/charities/1234">{{charity.charity.name}}</a>
+			               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et magna non augue rutrum fringilla ut sed felis. 
+			                  <a href="#/charities/1234">Read More</a>
+			               </p>
+			               <p class="recap-message">With the help of <strong>500</strong> donors this charity has received <strong>$50</strong> in donations from this endowment.</p>
+			            </div>
+			            <div class="span1">
+			               <button ng-click="addCharity(charity)">Add</button>
+			            </div>
+			         </div>
+			      </li>
+			   </ul>
+			</div>
+			<br>
+			<button ng-click="addCharities()">Create Endowment</button>
 		</div>
 	</div>
 </div>
+<pre>
+	{{debug}}
+</pre>

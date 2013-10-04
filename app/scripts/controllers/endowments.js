@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('giv2givApp')
-  .controller('EndowmentCtrl', function ($scope, $http, limitToFilter) {
+  .controller('EndowmentCtrl', function ($scope, $http, limitToFilter, endowment) {
   	 $scope.tags = [];
   	 $scope.charities = [];
     
@@ -26,4 +26,9 @@ angular.module('giv2givApp')
 	  					"FEMA",
 	  					"Coalition Against Breast Cancer"
 	  					);
+
+	  endowment.query(function(data){
+	  	$scope.debug = data;
+	  });
+	  
   });

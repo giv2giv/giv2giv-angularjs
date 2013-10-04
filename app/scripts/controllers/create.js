@@ -1,17 +1,30 @@
 'use strict';
 
 angular.module('giv2givApp')
-  .controller('CreateCtrl', function ( $scope, $location, $http, limitToFilter) {
+  .controller('CreateCtrl', function ( $scope, $location, $http, $routeParams, charity) {
   	$scope.endowment = {};
     $scope.endowment.name = "";
     $scope.endowment.description = "";
     $scope.endowment.charities = [];
+    $scope.steps = {};
 
-    $scope.charityList = [
-      {name: "Charity One", id: 1234},
-      {name: "Charity Two", id: 1235},
-      {name: "Charity Three", id: 1236}
-    ];
+    if($routeParams.id){
+      $scope.steps.showStep1 = false;
+      $scope.steps.showStep2 = true;
+    }else{
+      $scope.steps.showStep1 = true;
+    }
+
+    $scope.createEndowment = function(){
+      $scope.steps.showStep1 = false;
+      $scope.steps.showStep2 = true;
+
+      charity.query(function(data){
+        $scope.charityList = data;
+        console.log(data);
+        $location.path("endowment/create/1234");
+      });
+    }
 
 
     $scope.removeCharity = function ( charityId ){ 
@@ -22,7 +35,7 @@ angular.module('giv2givApp')
 
     $scope.addCharity = function ( charity ) {
       if ( charity != undefined ) {
-        $scope.endowment.charities.push ( charity );
+        $scope.endowment.charities.push(charity);
         var charityCount = $scope.endowment.charities.length;
         $scope.endowment.charityDistribution = 100 / charityCount;
 
@@ -43,6 +56,8 @@ angular.module('giv2givApp')
 
       return charityArray;
     };
+
+    $scope.debug = $scope.endowment;
 
  
 
