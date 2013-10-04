@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('giv2givApp', ['stripe', 'ngRoute', 'ngCookies', 'ngResource'])
+angular.module('giv2givApp', ['ui.bootstrap', 'stripe', 'ngRoute', 'ngCookies', 'ngResource'])
   .config(function ($routeProvider, $httpProvider) {
 
     $httpProvider.interceptors.push('sessionHttpInterceptor');
@@ -27,9 +27,8 @@ angular.module('giv2givApp', ['stripe', 'ngRoute', 'ngCookies', 'ngResource'])
         requireAuth: true
       })
       .when('/endowment/create/:id', {
-        templateUrl: 'views/create.html',
-        controller: 'CreateCtrl',
-        requireAuth: true
+        templateUrl: 'views/add-charities.html',
+        controller: 'AddCharitiesCtrl'
       })
       .when('/endowments/:id', {
         templateUrl: 'views/endowment-details.html',

@@ -7,15 +7,15 @@ angular.module('giv2givApp')
       if(typeof redirectTo === "undefined"){
         redirectTo = "account";
       }
-      session = new session;
       auth["action"] = "create";
-  		session.$save(auth, function(){
-        if($cookies.token = session.session.token){
+      var Session = new session(auth);
+  		Session.$save(function(){
+        if($cookies.token = Session.session.token){
           $location.path(redirectTo);
         }
       });
 
-  		return session;
+  		return Session;
 
   	};
 
@@ -29,9 +29,11 @@ angular.module('giv2givApp')
   	};
 
   	this.logOut = function(){
-
+      var auth = {};
+      auth["action"] = "destroy";
   		if( $cookies.token ){
-  			$cookies.token = null;
+  			delete $cookies.token;
+        session.$save(auth)
   		}
   	}
 
