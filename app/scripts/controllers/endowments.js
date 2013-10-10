@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('giv2givApp')
-  .controller('EndowmentCtrl', function ($scope, $http, limitToFilter) {
+  .controller('EndowmentCtrl', function ($scope, $http, limitToFilter, endowment) {
   	 $scope.tags = [];
-  	 $scope.charities = [];
+  	 
     
       $scope.cities = function(cityName) {
 	    return $http.jsonp("http://gd.geobytes.com/AutoCompleteCity?callback=JSON_CALLBACK &filter=US&q="+cityName).then(function(response){
@@ -22,8 +22,8 @@ angular.module('giv2givApp')
 	  					"Hunger"
 	  					);
 
-	  $scope.charities.push("Red Cross",
-	  					"FEMA",
-	  					"Coalition Against Breast Cancer"
-	  					);
+	  $scope.charities = endowment.query(function(data){
+	  	$scope.debug = data;
+	  });
+	  
   });

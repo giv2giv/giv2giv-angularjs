@@ -290,14 +290,14 @@ module.exports = function (grunt) {
       ]
     },
     karma: {
-      e2e: {
-       configFile: 'karma-e2e.conf.js',
-       singleRun: true
-      },
+      // e2e: {
+      //  configFile: 'karma-e2e.conf.js',
+      //  singleRun: true
+      // },
       unit: {
         configFile: 'karma.conf.js',
-        //singleRun: true
-        autoWatch: true
+        singleRun: true
+        //autoWatch: true
       }
     },
     cdnify: {
