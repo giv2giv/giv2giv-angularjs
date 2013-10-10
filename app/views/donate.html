@@ -1,28 +1,47 @@
 <div class="panel">
 	<h1>Donate</h1>
-	<form>
-		<fieldset>
-			<legend>Dwolla</legend>
-			<a href="https://www.dwolla.com/register" target="_blank">Don't have a Dwolla Pin?</a>
-			<br>
-			<span>Pin</span> <input type="text" class="span1"/>
-			<br>
-			<a href="">I forgot my pin</a>
-			<br>
-			<input type="radio" name="amount" value="1">$1
-			<input type="radio" name="amount" value="5">$5
-			<input type="radio" name="amount" value="10">$10
-			<input type="radio" name="amount" value="10">$50
-			<input type="radio" name="amount" value="10">$100
-			<br>
-			<input type="radio" name="amount" value="10"><input type="text" class="span1" value="custom"/>
-			<br>
-			<input type="radio" name="frequency"/> <span>One time donation</span>
-			<br>
-			<input type="radio" name="frequency"/> <span>Monthly recurring</span>
-			<br>
-			<button ng-click="donate()">Submit</button>
-		</fieldset>
-		
+
+<script class="dwolla_button" data-key="dAP7j5qcvExiuJdA/lXLCjTa/Ea5gnOQM2ZxQMsIO/DAT9CvFN"
+  data-redirect="http://o3design.net/giv2giv-angularjs/#/donate/1234"
+  data-label="Donate"
+  data-name="Giv2Giv"
+  data-description="undefined"
+  data-amount="5.00"
+  data-type="freetype"
+>
+</script>
+<form stripe:form="saveCustomer">
+  <fieldset>
+  	<input type="hidden" data-amount="2000"/>
+    <label>Credit Card</label><input type="text" size="20" data-stripe="number"/>
+    <br>
+    <label>CVC</label><input type="text" size="4" data-stripe="cvc"/>
+    <br>
+    <label>Month</label><input type="text" size="2" data-stripe="exp-month"/>
+    <label>Year</label><input type="text" size="4" data-stripe="exp-year"/>
+  </fieldset>
+  <button type="submit" class="btnGreen">Save</button>
+</form>
+<!-- 	<form action="https://www.dwolla.com/oauth/v2/authenticate/" method="GET">
+		<input id="client_id" name="client_id" type="hidden" value="{{key}}" />
+		<input id="response_type" name="response_type" type="hidden" value="code" />
+		<input id="redirect_uri" name="redirect_uri" type="hidden" 
+		value="http://dev.click2mail.com:9000/#/donate/1234" />
+		<input id="scope" name="scope" type="hidden" 
+		value="send|transactions" />
+		<button type="submit">Submit</button>
 	</form>
+
+	<form action="https://www.dwolla.com/oauth/v2/token/" method="GET">
+
+		<input id="client_id" name="client_id" type="hidden" value="{{key}}" />
+		<input id="client_secret" name="client_secret" type="hidden" value="{{secret}}" />
+		<input id="redirect_uri" name="redirect_uri" type="hidden" 
+		value="http://dev.click2mail.com:9000/#/donate/1234" />
+		<input id="grant_type" name="grant_type" type="hidden" 
+		value="authorization_code" />
+		<input id="code" name="code" type="hidden" 
+		value="{{code}}" />
+		<button type="submit">Submit</button>
+	</form> -->
 </div>

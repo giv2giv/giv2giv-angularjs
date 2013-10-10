@@ -2,15 +2,18 @@
 	<h2>Welcome to giv2giv</h2>
 	<form>
 		<label>Name</label>
-		<input type="text" />
+		<input ng-model="donor.name" type="text" />
 		<br>
 		<label>Email</label>
-		<input type="text" />
+		<input ng-model="donor.email" type="text" />
 		<br>
 		<label>Password</label>
-		<input type="text" />
+		<input ng-model="donor.password" type="text" />
 		<br>
-		<input type="submit" value="Register" ng-click="submitReg()"/>
+		<button ng-click="submitReg()">Register</button>
 	</form>
 	<a href="#/login">Aleardy a member? Login here!</a>
 </div>
+<pre>
+	{{debug}}
+</pre>

@@ -1,7 +1,9 @@
 'use strict';
 
-angular.module('giv2givApp', ['ui.bootstrap'])
+angular.module('giv2givApp', ['ui.bootstrap', 'stripe', 'ngRoute', 'ngCookies', 'ngResource'])
   .config(function ($routeProvider, $httpProvider) {
+
+    $httpProvider.interceptors.push('sessionHttpInterceptor');
 
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
     delete $httpProvider.defaults.headers.post['Content-type'];
@@ -21,7 +23,12 @@ angular.module('giv2givApp', ['ui.bootstrap'])
       })
       .when('/endowment/create', {
         templateUrl: 'views/create.html',
-        controller: 'CreateCtrl'
+        controller: 'CreateCtrl',
+        requireAuth: true
+      })
+      .when('/endowment/create/:id', {
+        templateUrl: 'views/add-charities.html',
+        controller: 'AddCharitiesCtrl'
       })
       .when('/endowments/:id', {
         templateUrl: 'views/endowment-details.html',
@@ -37,7 +44,8 @@ angular.module('giv2givApp', ['ui.bootstrap'])
       })
       .when('/account', {
         templateUrl: 'views/account.html',
-        controller: 'AccountCtrl'
+        controller: 'AccountCtrl',
+        requireAuth: true
       })
       .when('/register', {
         templateUrl: 'views/register.html',
@@ -50,4 +58,16 @@ angular.module('giv2givApp', ['ui.bootstrap'])
       .otherwise({
         redirectTo: '/login'
       });
-  });
+  })
+.run(function($rootScope, $location, $cookies){
+
+  $rootScope.$on("$routeChangeStart", function(event, next, current){
+    if(next.requireAuth && !$cookies.token){
+      $location.path('login');
+    }
+  })
+
+});
+
+
+

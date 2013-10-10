@@ -1,14 +1,14 @@
 {
   "name": "angular-mocks",
-  "version": "1.0.7",
+  "version": "1.2.0rc1",
   "main": "./angular-mocks.js",
   "dependencies": {
-    "angular": "1.0.7"
+    "angular": "1.2.0rc1"
   },
-  "gitHead": "73ba0b247c919472906ac3fbbe8fa5cce6a853cd",
+  "gitHead": "fcd87e92ac308d6451a185f242531a3b6d34b8cf",
   "readme": "bower-angular-mocks\n===================\n\nangular-mocks.js bower repo",
   "readmeFilename": "README.md",
-  "_id": "angular-mocks@1.0.7",
+  "_id": "angular-mocks@1.2.0rc1",
   "description": "bower-angular-mocks ===================",
   "repository": {
     "type": "git",

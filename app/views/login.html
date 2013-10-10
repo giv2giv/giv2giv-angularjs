@@ -1,9 +1,9 @@
 <div class="panel">
 	<h2>Welcome back</h2>
 	<form>
-		<label>Email</label><input type="text"/>
+		<label>Email</label><input type="text" ng-model="auth.email"/>
 		<br>
-		<label>Pasword</label><input type="text"/>
+		<label>Pasword</label><input type="text" ng-model="auth.password"/>
 		<br>
 		<button ng-click="submitLogin()">Login</button>
 	</form>	
@@ -11,3 +11,6 @@
 	<br>
 	<a href="#/register">Opps, I forgot my password.</a>
 </div>
+<pre>
+	{{debug}}
+</pre>
