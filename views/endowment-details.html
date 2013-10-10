@@ -2,11 +2,11 @@
 	<div class="span8">
 		<div class="endowment">
 			<div class="endowment__image" style="background-image: url('http://i.istockimg.com/file_thumbview_approve/4011441/2/stock-photo-4011441-ballerinas.jpg')">
-				<h1 class="endowment__title">John Smith Endowment <br>for The Arts</h1>
+				<h1 class="endowment__title">{{endowment.charity_group.name}}</h1>
 			</div>
 
 			<p class="endowment__description">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed rhoncus urna, in euismod nunc. Curabitur sagittis orci eu nisl sagittis pellentesque. Mauris interdum ut ligula a placerat. Proin dictum convallis justo at volutpat. In pulvinar eros at ipsum volutpat, vel viverra neque feugiat. Phasellus malesuada tortor eget consectetur lobortis.
+			{{endowment.charity_group.description}}
 			</p>
 		</div>
 		<div class="endowment__stats">
@@ -28,49 +28,22 @@
 				</li>
 			</ul>
 			<div class="endowment__action">
-				<a class="btn" href="#/donate/1234">Donate</a>
+				<a class="btn" href="#/donate/{{endowment.charity_group.id}}">Donate</a>
 			</div>
 		</div>
 		<div class="panel">
 			<div class="endowment__charities-list">
 				<ul>
-					<li>
+					<li ng-repeat="charity in endowment.charity_group.charities">
 						<div class="row">
 							<div class="span2">
-								<img src="http://placehold.it/150x150">
-
+								<div class="list__thumb">
+									<img src="http://placehold.it/150x150">
+								</div>
 							</div>
 							<div class="span5">
-								<a href="#/charities/1234">The Red Cross</a>
+								<h4><a href="#/charities/{{charity.id}}">{{charity.name}}</a></h4>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et magna non augue rutrum fringilla ut sed felis. 
-									<a href="#/charities/1234">Read More</a>
-								</p>
-								<p class="recap-message">With the help of <strong>500</strong> donors this charity has received <strong>$50</strong> in donations from this endowment.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="row">
-							<div class="span2">
-								<img src="http://placehold.it/150x150">
-							</div>
-							<div class="span5">
-								<a href="#/charities/1234">The Red Cross</a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et magna non augue rutrum fringilla ut sed felis.
-									<a href="#/charities/1234">Read More</a>
-								</p>
-								<p class="recap-message">With the help of <strong>500</strong> donors this charity has received <strong>$50</strong> in donations from this endowment.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="row">
-							<div class="span2">
-								<img src="http://placehold.it/150x150">
-							</div>
-							<div class="span5">
-								<a href="#/charities/1234">The Red Cross</a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et magna non augue rutrum fringilla ut sed felis.
 									<a href="#/charities/1234">Read More</a>
 								</p>
 								<p class="recap-message">With the help of <strong>500</strong> donors this charity has received <strong>$50</strong> in donations from this endowment.</p>
@@ -101,3 +74,4 @@
 		</div>
 	</div>
 </div>
+<pre>{{debug}}</pre>
