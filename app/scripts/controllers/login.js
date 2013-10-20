@@ -3,6 +3,8 @@
 angular.module('giv2givApp')
 	.controller('LoginCtrl', function ($scope, $location, sessionService) {
 
+	console.log($scope.$parent.awesomeThings);
+
 	if(sessionService.isLoggedIn()){
 		$location.path('account');
 	}
