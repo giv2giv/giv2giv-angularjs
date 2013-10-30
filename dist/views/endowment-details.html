@@ -2,11 +2,11 @@
 	<div class="span8">
 		<div class="endowment">
 			<div class="endowment__image" style="background-image: url('http://i.istockimg.com/file_thumbview_approve/4011441/2/stock-photo-4011441-ballerinas.jpg')">
-				<h1 class="endowment__title">{{endowment.charity_group.name}}</h1>
+				<h1 class="endowment__title">{{endowment.endowment.name}}</h1>
 			</div>
 
 			<p class="endowment__description">
-			{{endowment.charity_group.description}}
+			{{endowment.endowment.description}}
 			</p>
 		</div>
 		<div class="endowment__stats">
@@ -28,13 +28,13 @@
 				</li>
 			</ul>
 			<div class="endowment__action">
-				<a class="btn" href="#/donate/{{endowment.charity_group.id}}">Donate</a>
+				<a class="btn" href="#/donate/{{endowment.endowment.id}}">Donate</a>
 			</div>
 		</div>
 		<div class="panel">
 			<div class="endowment__charities-list">
 				<ul>
-					<li ng-repeat="charity in endowment.charity_group.charities">
+					<li ng-repeat="charity in endowment.endowment.charities">
 						<div class="row">
 							<div class="span2">
 								<div class="list__thumb">

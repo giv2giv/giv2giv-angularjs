@@ -8,7 +8,7 @@ angular.module('giv2givApp')
     $scope.steps = {};
     $scope.privacyOptions = ["public", "private"];
     $scope.donationAmounts = ["5.00", "10.00", "20.00", "100.00"];
-    $scope.endowment.charity_group_visibility = $scope.privacyOptions[0];
+    $scope.endowment.endowment_visibility = $scope.privacyOptions[0];
     $scope.endowment.minimum_donation_amount = $scope.donationAmounts[0];
 
 
@@ -18,7 +18,7 @@ angular.module('giv2givApp')
 
       var result = Endowment.$save(
       function success(data){
-        $location.path("endowment/create/" + data.charity_group.id);
+        $location.path("endowment/create/" + data.endowment.id);
       },
       function err(){
         console.log("Opps")
